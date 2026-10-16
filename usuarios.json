@@ -1,0 +1,44 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Lucas Fernández",
+      "usuario": "lucas_click",
+      "puntaje": 1580,
+      "monedas": 320,
+      "nivel": 8
+    },
+    {
+      "id": 2,
+      "nombre": "Sofía Martínez",
+      "usuario": "sofi_taps",
+      "puntaje": 1425,
+      "monedas": 275,
+      "nivel": 7
+    },
+    {
+      "id": 3,
+      "nombre": "Mateo González",
+      "usuario": "mateo_gamer",
+      "puntaje": 1190,
+      "monedas": 210,
+      "nivel": 6
+    },
+    {
+      "id": 4,
+      "nombre": "Valentina López",
+      "usuario": "vale_clicks",
+      "puntaje": 980,
+      "monedas": 185,
+      "nivel": 5
+    },
+    {
+      "id": 5,
+      "nombre": "Benjamín Torres",
+      "usuario": "benja_tap",
+      "puntaje": 760,
+      "monedas": 140,
+      "nivel": 4
+    }
+  ]
+}
