@@ -1313,3 +1313,63 @@ aside {
 .reset-btn:active {
   transform: scale(0.97);
 }
+
+#ranking-usuarios {
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #202030;
+    color: white;
+    border-radius: 15px;
+}
+
+#ranking-usuarios h2 {
+    text-align: center;
+    color: #ffd700;
+}
+
+#lista-usuarios {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.usuario-item {
+    display: grid;
+    grid-template-columns: 40px 1fr 75px 110px;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    background: #303047;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.posicion {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.nombre {
+    font-weight: bold;
+}
+
+.nivel {
+    color: #aaaaff;
+}
+
+.clicks {
+    text-align: right;
+    color: #70e890;
+}
+
+@media (max-width: 450px) {
+    .usuario-item {
+        grid-template-columns: 30px 1fr 55px;
+    }
+
+    .clicks {
+        grid-column: 2 / 4;
+        text-align: left;
+    }
+}

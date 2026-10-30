@@ -1633,3 +1633,79 @@ function resetFullGame() {
 
 // Start the game
 init();
+
+const nombres = [
+    "Tomi", "Lucia", "Mateo", "Sofia", "Benjamin",
+    "Valentina", "Thiago", "Martina", "Joaquin",
+    "Camila", "Franco", "Mia", "Santino", "Julieta",
+    "Agustin", "Emma", "Nicolas", "Catalina",
+    "Lautaro", "Renata", "Facundo", "Abril"
+];
+
+const apellidos = [
+    "Gomez", "Rodriguez", "Fernandez", "Lopez",
+    "Martinez", "Perez", "Garcia", "Sanchez",
+    "Romero", "Torres", "Diaz", "Alvarez"
+];
+
+function numeroAleatorio(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function elegirAleatorio(array) {
+    return array[numeroAleatorio(0, array.length - 1)];
+}
+
+function generarUsuarios(cantidad = 20) {
+    const usuarios = [];
+
+    for (let i = 0; i < cantidad; i++) {
+        usuarios.push({
+            id: i + 1,
+            nombre: elegirAleatorio(nombres) + " " + elegirAleatorio(apellidos),
+            clicks: numeroAleatorio(100, 50000),
+            nivel: numeroAleatorio(1, 30),
+            monedas: numeroAleatorio(100, 100000)
+        });
+    }
+
+    return usuarios.sort((a, b) => b.clicks - a.clicks);
+}
+
+// Generar nuevos usuarios al iniciar el juego
+const usuariosFicticios = generarUsuarios(20);
+
+// Guardar una copia en el navegador
+localStorage.setItem(
+    "usuariosFicticios",
+    JSON.stringify(usuariosFicticios)
+);
+
+// ==========================================
+// MOSTRAR USUARIOS EN EL INDEX
+// ==========================================
+
+function mostrarUsuarios() {
+    const contenedor = document.getElementById("lista-usuarios");
+
+    if (!contenedor) return;
+
+    contenedor.innerHTML = "";
+
+    usuariosFicticios.forEach((usuario, index) => {
+        const elemento = document.createElement("div");
+
+        elemento.className = "usuario-item";
+
+        elemento.innerHTML = `
+            <span class="posicion">#${index + 1}</span>
+            <span class="nombre">${usuario.nombre}</span>
+            <span class="nivel">Nivel ${usuario.nivel}</span>
+            <span class="clicks">${usuario.clicks.toLocaleString("es-AR")} clics</span>
+        `;
+
+        contenedor.appendChild(elemento);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", mostrarUsuarios);
