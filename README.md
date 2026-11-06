@@ -53,9 +53,15 @@ Roadmap de entregables
 Entregable
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1-Documentación inicial (README)
+
 2-Estructura básica del juego
+
 3-Mecánicas principales del Clicker
+
 4-Interfaz gráfica completa
+
 5-Integración de agentes de IA
+
 6-Pruebas y corrección de errores
+
 7-Versión final del proyecto
